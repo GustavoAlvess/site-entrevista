@@ -5,27 +5,46 @@ reset do css */
     box-sizing: border-box;
 }   
 
-/* Estilização do header */
-header {                  
+header {
     width: 100%;
     height: 80px;
-    background-color: #ffffff;
+    
+    /* Cor de fundo com transparência para o efeito de vidro */
+    background-color: rgba(0, 16, 46, 0.4); /* Ajustei o alpha para 0.4 para mais transparência */
+
+    /* Efeito de desfoque */
+    backdrop-filter: blur(12px); /* Aumentei o blur para 12px para ser mais perceptível */
+    -webkit-backdrop-filter: blur(12px); /* Prefixo para compatibilidade */
+
+    /* Para que o header sobreponha o conteúdo e o desfoque funcione */
+    position: fixed; /* Mudei para fixed para garantir que ele flutue sobre tudo */
+    top: 0;
+    left: 0; /* Garante que ele ocupe toda a largura horizontal */
+    z-index: 1000; /* Um z-index alto para ficar acima de outros elementos */
+
+    /* Opcional: Adicionar uma borda leve para simular o "vidro" */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+
+    /* Sombreamento para dar profundidade (opcional) */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+
+    /* O resto do seu código de layout */
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: #00102E;
-}              
+    
+}
 
 .textos-header {
     width: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: #00102E;
+    color: #ffd900;
 }
 
 .texto-button {
-    color: #00102E;
+    color: #ffffff;
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
@@ -41,6 +60,8 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    padding-top: 30px;
+    overflow: hidden;
 }
 
 .content-container {
@@ -54,19 +75,102 @@ body {
 }
 
 h1 {
-    color: #FFFFFF;
-    font-size: 64px;
+    color: #ffd900;
+    font-size: 84px;
     text-align: left;
     max-width: 500px;
-    margin-left: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 100px;
+    margin-bottom: 70px;
+    text-shadow: 0 0 150px #ffd900;;
     line-height: 1.3;
     font-weight: 700;
+    transition: all 0.9s ease;
+
+}
+h1:hover{
+    color: #ffffff;
+    font-size: 84px;
+    text-align: left;
+    max-width: 500px;
+    margin-left: 130px;
+    margin-bottom: 70px;
+    text-shadow: 0 0 150px #ffffff;;
+    line-height: 1.3;
+    font-weight: 700;
+
 }
 
-img {
-    width: 55vw;
-    height: 85vh;
-    border-radius: 20px;
-    object-fit: cover;
+.caixa1 {
+    width: 100%;
+    height: 100vh;
+    
+    background-image:
+        linear-gradient(rgba(13, 13, 71, 0.4), rgba(30, 30, 92, 0.4)), 
+        url('../img/jeremiah.png');
+        
+    background-size: cover;
+    background-position: center;
+
+    mask-image: linear-gradient(to right, 
+        rgba(0, 0, 0, 0) 0%,   
+        rgba(0, 0, 0, 1) 30%   
+    );
+
+    -webkit-mask-image: linear-gradient(to right, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 1) 30%
+    );
+}
+
+
+.home {
+
+    transition: all 0.7s ease;
+    font-size: 18px; 
+    color: #ffffff;  
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+
+.home:hover {
+    color: #ffd900;
+    translate: 0px -3px;
+    font-size: 20px; 
+    text-decoration: none;
+}
+.Sobre {
+
+    transition: all 0.3s ease;
+    font-size: 18px; 
+    color: #ffffff;  
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+
+.Sobre:hover {
+    color: #ffd900;
+    translate: 0px -3px;
+    font-size: 20px; 
+    text-decoration: none;
+}
+.Entrevista {
+
+    transition: all 0.3s ease;
+    font-size: 18px; 
+    color: #ffffff;  
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+
+.Entrevista:hover {
+    color: #ffd900;
+    translate: 0px -3px;
+    font-size: 20px; 
+    text-decoration: none;
 }

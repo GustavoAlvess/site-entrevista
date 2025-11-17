@@ -1,0 +1,157 @@
+/* reset do css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do corpo da página */
+body {
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #000816 0%, #00163d 100%);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* Adiciona espaço para o header fixo */
+    transition: all 1.0s ease;
+}
+
+/* Estilo do Header */
+header {
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 16, 46, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textos-header {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.texto-button {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.texto-button:hover, .texto-button.ativo {
+    color: #ffd900;
+    transform: translateY(-3px);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Estilo para o Título Principal da Página */
+.conteudo-principal h1 {
+    color: #ffd900;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* ---------------------------------------------------- */
+/* LAYOUT DE DUAS COLUNAS COM FLEXBOX */
+/* ---------------------------------------------------- */
+
+.cards-entrevisa {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    
+    row-gap: 20px; /* Espaçamento entre as linhas (novo) */
+    
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* Estilo unificado para todos os cards de pergunta */
+.cards-entrevisa > div:not(.conclusão) {
+    /* Define a largura para que dois cards caibam na linha com 20px de espaço entre eles */
+    width: calc(50% - 10px); 
+    
+    /* Estilos de Aparência */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    
+    /* Para garantir a mesma altura por linha */
+    display: flex;
+    flex-direction: column;
+}
+
+.cards-entrevisa > div:not(.conclusão) h2 {
+    margin-bottom: 10px;
+    color: #ffd900;
+}
+.cards-entrevisa > div:not(.conclusão) p {
+    line-height: 1.6;
+    flex-grow: 1; 
+}
+
+/* Estilo para a Conclusão (Ocupa a linha inteira) */
+.conclusão {
+    width: 100%; /* Ocupa a linha inteira */
+    
+    /* Estilização de destaque */
+    background-color: rgba(0, 16, 46, 0.6);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ffd900;
+    color: #ffffff;
+}
+
+.conclusão h2 {
+    color: #ffd900;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* NAVEGAÇÃO ENTRE PÁGINAS */
+.navegacao {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 40px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.navegacao .texto-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: 2px solid #ffd900;
+    border-radius: 5px;
+ 
+}
+
+.navegacao .texto-button:hover {
+    background-color: #ffd900;
+    color: #000816;
+}
